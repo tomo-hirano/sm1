@@ -5,6 +5,8 @@ import jp.co.litemo.sm1.entity.Employee;
 import jp.co.litemo.sm1.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 /**
@@ -23,7 +25,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public Employee createEmployee(@Valid @RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);
     }
 
