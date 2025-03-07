@@ -7,6 +7,8 @@ import jp.co.litemo.sm1.exception.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 /**
@@ -24,7 +26,7 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Employee saveEmployee(Employee employee) {
+    public Employee saveEmployee(@Valid Employee employee) {
         return employeeRepository.save(employee);
     }
 
